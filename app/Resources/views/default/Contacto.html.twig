@@ -1,0 +1,72 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+
+<style type="text/css">
+
+table, th, td {
+    border: 0px;
+    border-collapse: collapse;
+}
+
+</style>
+
+
+    <div class="row">
+
+    <div class="col-md-6">
+    <div class="well">
+ <legend><span class="glyphicon glyphicon-book"></span> Directorio</legend>
+<table id="t02">    
+  <tr>
+   <td colspan="2"><b>Jefe de la División de Posgrado e Investigación</b></td>
+
+  </tr>
+  <tr>
+  <td >MC. Juan Francisco Ibáñez Salas</td>      
+    <td><a href="mailto:#">pacois20@gmail.com</a></td>
+  </tr>
+
+  <tr>
+    <td colspan="2"><b>Coordinador de la Maestría en Ingeniería Electrónica</b></td>
+  </tr>
+  <tr>
+      <td> Dr. Arnoldo Díaz Ramírez </td>        
+    <td><a href="mailto:#">adiaz@itmexicali.edu.mx </a></td>
+  </tr>
+
+  <tr>
+    <td colspan="2"><b>Coordinador de Proyectos de Investigación</b></td>
+  </tr>
+  <tr>
+      <td> MC. Heber Samuel Hernandez Tabares </td>        
+    <td><a href="mailto:#"> heberhdz@hotmail.com </a></td>
+  </tr>
+</table>
+</div>
+</div>
+
+        <div class="col-md-6">
+        <div class="well">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Información de Contacto</legend>
+            <address>
+                <strong>División de Estudios de Posgrado e Investigación del Instituto Tecnológico de Mexicali</strong><br>
+                Av Tecnológico s/n Col. Elias Calles<br>
+                 C.P. 21397, Mexicali, Baja California, Mexico<br>
+                <abbr title="Phone">
+                    Teléfono:</abbr>
+                (686) 580 4950, (686) 580 4912
+            </address>
+            <address>
+                <strong>Email</strong><br>
+                <a href="mailto:#"> posgrado@itmexicali.edu.mx</a><br>
+            </address>
+            </form>
+        </div>
+</div>
+ </div>
+
+
+{% endblock %}
