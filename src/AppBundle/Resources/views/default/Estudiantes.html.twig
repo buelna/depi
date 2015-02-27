@@ -8,44 +8,48 @@
  .glyphicon { margin-bottom: 10px;margin-right: 10px;}
  </style>
 
-   <h4> Generacion 2014 </h4>
+   <h4> LGAC Computación Ubicua </h4>
             <div class="well">
-                <div class="row">
-                    <div class="col-md-2">
-                            <img src="{{asset('images/150x150.gif')}}" alt="" class="img-rounded img-responsive" />
-                    </div>
-                    <div class="col-md-4">
-                        <h4>
-                            Francisco Concha Rios</h4>
 
-                            <i class="glyphicon glyphicon-envelope"></i>fco7concha@gmai.com
-                            <br />
-                            <i class="glyphicon glyphicon-globe"></i><a href="http://cachanilla.itmexicali.edu.mx/~pacois/">?</a>
-                            <br />
-                            <i class="glyphicon glyphicon-book"></i>Pasante Ingeníera en Sistemas Computacionales
-                            <br />
-                            <small>Línea de Investigación: ?</small>
-                        <!-- Split button -->
-                    </div>
-
+                {% for i in range(1,6,2) %}
+           <div class="row">
                      <div class="col-md-2">
-                           <img src="{{asset('images/150x150.gif')}}" alt="" class="img-rounded img-responsive" />
+                        <img src="{{asset('bundles/app/images/150x150.gif')}}" alt="" class="img-rounded img-responsive" />
                     </div>
                     <div class="col-md-4">
                         <h4>
-                            Andrés Buelna Benítez</h4>
+                            Estudiante {{i}}</h4>
 
-                            <i class="glyphicon glyphicon-envelope"></i>buelna_b@gmail.com
+                            <i class="glyphicon glyphicon-envelope"></i>correo@gmail.com
                             <br />
-                            <i class="glyphicon glyphicon-globe"></i><a href="http://cachanilla.itmexicali.edu.mx/~pacois/"></a>
+                            <i class="glyphicon glyphicon-book"></i>Titulo en algo
                             <br />
-                            <i class="glyphicon glyphicon-book"></i>Pasante Ingeníera en Sistemas Computacionales
+                            <small>Generación: 2014</small>
                             <br />
-                            <small>Línea de Investigación: ?</small>
+                            <small>Área de Investigación: Alguna Area</small>
                         <!-- Split button -->
                     </div>
 
+                 <div class="col-md-2">
+                        <img src="{{asset('bundles/app/images/150x150.gif')}}" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-md-4">
+                        <h4>
+                            Estudiante {{i+1}}</h4>
+
+                            <i class="glyphicon glyphicon-envelope"></i>correo@gmail.com
+                            <br />
+                            <i class="glyphicon glyphicon-book"></i>Titulo en algo
+                            <br />
+                            <small>Generación: 2014</small>
+                            <br />
+                            <small>Área de Investigación: Alguna Area</small>
+                        <!-- Split button -->
+                    </div>
 
                 </div>
+                <hr>
+{% endfor %}
+
 </div>
 {% endblock %}
