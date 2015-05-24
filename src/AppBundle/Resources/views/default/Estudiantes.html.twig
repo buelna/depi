@@ -1,55 +1,57 @@
 {% extends '::base.html.twig' %}
-
-
-
 {% block body %}
-
 <style>
  .glyphicon { margin-bottom: 10px;margin-right: 10px;}
  </style>
-
-   <h4> LGAC Computación Ubicua </h4>
-            <div class="well">
-
-                {% for i in range(1,6,2) %}
-           <div class="row">
-                     <div class="col-md-2">
-                        <img src="{{asset('bundles/app/images/150x150.gif')}}" alt="" class="img-rounded img-responsive" />
-                    </div>
-                    <div class="col-md-4">
-                        <h4>
-                            Estudiante {{i}}</h4>
-
-                            <i class="glyphicon glyphicon-envelope"></i>correo@gmail.com
-                            <br />
-                            <i class="glyphicon glyphicon-book"></i>Titulo en algo
-                            <br />
-                            <small>Generación: 2014</small>
-                            <br />
-                            <small>Área de Investigación: Alguna Area</small>
-                        <!-- Split button -->
-                    </div>
-
-                 <div class="col-md-2">
-                        <img src="{{asset('bundles/app/images/150x150.gif')}}" alt="" class="img-rounded img-responsive" />
-                    </div>
-                    <div class="col-md-4">
-                        <h4>
-                            Estudiante {{i+1}}</h4>
-
-                            <i class="glyphicon glyphicon-envelope"></i>correo@gmail.com
-                            <br />
-                            <i class="glyphicon glyphicon-book"></i>Titulo en algo
-                            <br />
-                            <small>Generación: 2014</small>
-                            <br />
-                            <small>Área de Investigación: Alguna Area</small>
-                        <!-- Split button -->
-                    </div>
-
-                </div>
-                <hr>
-{% endfor %}
-
+<div class="well">
+{% set b = 0 %}
+{% for alumno in alumnos %}
+    {% if b == 0 %}
+    <div class="row">
+        <div class="col-md-2">
+            {% if alumno.getEnlaceImagen() %}
+            <img src="{{alumno.getEnlaceImagen()}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% else %}
+            <img src="{{asset('bundles/app/images/unknown-user.gif')}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <h4>{{alumno.getNombre}} {{alumno.getApellidoP}}</h4>
+            <small><i class="glyphicon glyphicon-envelope"></i>{{alumno.getEmail}}</small>
+            <br />
+            <small><i class="glyphicon glyphicon-book"></i>{{alumno.getTitulo}}</small>
+            <br />
+            <small>Generación:  {{alumno.getGeneracion}}</small>
+            <br />
+            <small>Área de Investigación: {{alumno.getAreaInteres}}</small>
+            <hr>
+        </div>
+        {% set b = 1 %}
+    {% else %}
+        <div class="col-md-2">
+            {% if alumno.getEnlaceImagen() %}
+            <img src="{{alumno.getEnlaceImagen()}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% else %}
+            <img src="{{asset('bundles/app/images/unknown-user.gif')}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <h4>{{alumno.getNombre}} {{alumno.getApellidoP}}</h4>
+            <small><i class="glyphicon glyphicon-envelope"></i>{{alumno.getEmail}}</small>
+            <br />
+            <small><i class="glyphicon glyphicon-book"></i>{{alumno.getTitulo}}</small>
+            <br />
+            <small>Generación:  {{alumno.getGeneracion}}</small>
+            <br />
+            <small>Área de Investigación: {{alumno.getAreaInteres}}</small>
+            <hr>
+        </div>
+    </div>
+    {% set b = 0 %}
+        {% endif %}
+    {% endfor %}
+    {% if b == 1 %}
+        </div>
+    {% endif %}
 </div>
 {% endblock %}

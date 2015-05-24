@@ -1,0 +1,65 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+<div class="well">
+	<a href="#" id="MElineaA"><h4>Computación ubicua</h4></a>
+	<div id="MElineaA1" style="display:none">
+	{% for  publicacion in publicaciones %}
+		{% for tipo in tipos%}
+		    {% if publicacion.id == tipo.id %}
+		        <h3>{{ publicacion.nombre }}</h3>
+		    {% endif %}
+		{% endfor %}        
+	<ul >
+	    {% for entity in entities %}
+	        {% for publicacionid in publicacionesid %}    
+	            {% if entity.id == publicacionid.id %}
+	                    {% if publicacion.nombre == publicacionid.tipoPublicacion %}
+
+	                        <li>
+	                            <cite>                  
+	                        
+	                            {% for miembro in miembros %}
+	                                {% if miembro.idpublicacion == entity.id %}
+	                                   {{ miembro.nombreMiembro|first}}. {{ miembro.apellidoP}}, 
+	                                {% endif %}
+	                            {% endfor %}
+	                            {% if entity.path %}
+	                                <a href="http://caii.itmexicali.edu.mx/download/{{ entity.path }}">{% if entity.titulo %}"{{ entity.titulo }}"{% endif %}</a>
+
+	                            {% else %}  
+	                                {% if entity.titulo %}"{{ entity.titulo }}"{% endif %}
+	                            {% endif %}
+	                            {% if entity.tituloLibro %}, {{ entity.tituloLibro }}{% endif %}</cite>
+	                            {% if entity.capitulo %}, {{ entity.capitulo }}{% endif %}
+	                            {% if entity.journal %}, {{ entity.journal }}{% endif %}
+	                            {% if entity.volumen %}, vol. {{ entity.volumen }}{% endif %}
+	                            {% if entity.congreso %}, In proceedings of {{ entity.congreso }}{% endif %}
+	                            {% if entity.ciudad %}, {{ entity.ciudad }}{% endif %}
+	                            {% if entity.editorial %}, Editorial {{ entity.editorial }}{% endif %}
+	                            {% if entity.serie %}No. {{ entity.serie }}{% endif %}
+	                            {% if entity.edicion %}, Edición. {{ entity.edicion }}{% endif %}
+	                            {% if entity.tipoReporte %}, {{ entity.tipoReporte }}{% endif %}
+	                           {# {% if entity.fecha %}, {{ entity.fecha|date('F Y', "America/Tijuana") }}{% endif %}#}
+	                            {% if entity.paginas %}, pp. {{ entity.paginas }}{% endif %}
+	                            {% if entity.issn %}, ISSN {{ entity.issn }}{% endif %}
+	                            {% if entity.isbn %}, ISBN {{ entity.isbn }}{% endif %}
+	                            {% if entity.doi %}, DOI: <a href="http://dx.doi.org/{{ entity.doi }}">{{ entity.doi }}</a> {% endif %}
+	                            {% if entity.tipoTesis %}, {{ entity.tipoTesis }}{% endif %}
+	                           
+	                        </li>
+	                    {% endif %}   
+	            {% endif %}        
+	        {% endfor %}
+	    {% endfor %}
+	</ul>    
+	{% endfor %}  
+	</div>
+	<a href="#" id="MElineaB"><h4>Procesamiento digital de señales</h4></a> 
+	<br>
+	<div id="MElineaB1" style="display:none">
+	(Contenido)
+	</div>
+</div>
+{% endblock %}

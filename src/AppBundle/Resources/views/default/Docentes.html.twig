@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+ <style>
+ .glyphicon { margin-bottom: 10px;margin-right: 10px;}
+ </style>
+<div class="well">
+	{% set b = 0 %}
+	{% for docente in docentes %}
+		{% if b == 0 %}
+		<div class="row">
+			<br>
+			<div class="col-md-2">    
+            {% if docente.getEnlaceImagen() %}
+            <img src="{{docente.getEnlaceImagen()}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% else %}
+            <img src="{{asset('bundles/app/images/unknown-user.gif')}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% endif %}
+            </div>
+            <div class="col-md-4">
+				<h4>{{docente.getNombre()}} {{docente.getApellidoP()}}</h4>
+                <small><i class="glyphicon glyphicon-envelope"></i>{{docente.getEmail()}}</small>
+                <br />
+                <small><i class="glyphicon glyphicon-globe"></i><a href="{{docente.getEnlacePagina()}}">Home Page</a></small>
+                <br />
+                <small><i class="glyphicon glyphicon-book"></i>{{docente.getTitulo()}}</small>
+                <br />
+                <small>Área de Interes: {{docente.getAreaInteres()}}</small>
+                <hr>
+            </div>
+			{% set b = 1 %}
+		{% else %}
+			<div class="col-md-2">
+            {% if docente.getEnlaceImagen() %}
+            <img src="{{docente.getEnlaceImagen()}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% else %}
+            <img src="{{asset('bundles/app/images/unknown-user.gif')}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% endif %}
+            </div>
+            <div class="col-md-4">
+                <h4>{{docente.getNombre()}} {{docente.getApellidoP()}}</h4>
+                <small><i class="glyphicon glyphicon-envelope"></i>{{docente.getEmail()}}</small>
+                <br />
+                <small><i class="glyphicon glyphicon-globe"></i><a href="{{docente.getEnlacePagina()}}">Home Page</a></small>
+                <br />
+                <small><i class="glyphicon glyphicon-book"></i>{{docente.getTitulo()}}</small>
+                <br />
+                <small>Área de Interes: {{docente.getAreaInteres()}}</small>
+                <hr>
+            </div>
+		</div>
+        {% set b = 0 %}
+		{% endif %}
+	{% endfor %}
+	{% if b == 1 %}
+		</div>
+	{% endif %}
+</div>
+{% endblock %}

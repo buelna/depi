@@ -2,6 +2,40 @@ app:
     resource: @AppBundle/Controller/
     type:     annotation
 
+inicio:
+    pattern: /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect,route: general_main, permanent: true }
 general_main:
-    path:     /{page}
-    defaults: { _controller: AppBundle:Default:index,page:Inicio }
+    path:     /Inicio
+    defaults: { _controller: AppBundle:Default:index }
+admision:
+    pattern:  /Admision/
+    defaults: { _controller: AppBundle:Default:admision }
+contacto:
+    pattern:  /Contacto/
+    defaults: { _controller: AppBundle:Default:contacto }
+criteriospnp:
+    pattern:  /CriteriosPNP/
+    defaults: { _controller: AppBundle:Default:criteriospnp }
+estudiantes:
+    pattern:  /Estudiantes/
+    defaults: { _controller: AppBundle:Default:estudiantes }
+investigadores:
+    pattern:  /Docentes/
+    defaults: { _controller: AppBundle:Default:docentes }
+lineasii:
+    pattern:  /LineasII/
+    defaults: { _controller: AppBundle:Default:lineasII }
+lineasme:
+    pattern:  /LineasME/
+    defaults: { _controller: AppBundle:Default:lineasME }
+programaii:
+    pattern:  /ProgramaII/
+    defaults: { _controller: AppBundle:Default:programaII }
+programame:
+    pattern:  /ProgramaME/
+    defaults: { _controller: AppBundle:Default:programaME }
+publicaciones:
+    pattern:  /Publicaciones/
+    defaults: { _controller: AppBundle:Default:publicaciones }
+

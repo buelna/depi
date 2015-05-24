@@ -7,8 +7,8 @@
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
     "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony": "2.6.*",
+        "php": ">=5.4",
+        "symfony/symfony": "~2.5",
         "doctrine/orm": "~2.2,>=2.2.3,<2.5",
         "doctrine/dbal": "<2.5",
         "doctrine/doctrine-bundle": "~1.2",
@@ -18,6 +18,8 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0,>=3.0.12",
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
+        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "doctrine/data-fixtures": "dev-master",
         "incenteev/composer-parameter-handler": "~2.0"
     },
     "require-dev": {
