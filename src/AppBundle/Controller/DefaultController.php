@@ -7,9 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/app/example", name="homepage")
-     */
+    public function backendAction()
+    {
+        return $this->render('AppBundle:default:backendMenu.html.twig');
+    }
     public function indexAction()
     {
         return $this->render('AppBundle:default:Inicio.html.twig');

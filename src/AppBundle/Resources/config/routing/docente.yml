@@ -1,0 +1,30 @@
+docente:
+    path:     /
+    defaults: { _controller: "AppBundle:Docente:index" }
+
+docente_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Docente:show" }
+
+docente_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Docente:new" }
+
+docente_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Docente:create" }
+    methods:  POST
+
+docente_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Docente:edit" }
+
+docente_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Docente:update" }
+    methods:  [POST, PUT]
+
+docente_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Docente:delete" }
+    methods:  [POST, DELETE]

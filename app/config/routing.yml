@@ -2,6 +2,14 @@ app:
     resource: @AppBundle/Controller/
     type:     annotation
 
+app_alumno:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /backend
+
+app_backend:
+    pattern: /backend
+    defaults: { _controller: AppBundle:Default:backend }
+
 inicio:
     pattern: /
     defaults: { _controller: FrameworkBundle:Redirect:redirect,route: general_main, permanent: true }
