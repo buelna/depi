@@ -22,7 +22,7 @@ class DocenteType extends AbstractType
             ->add('titulo')
             ->add('areaInteres')
             ->add('enlacePagina')
-            ->add('enlaceImagen')
+            ->add('file')
         ;
     }
     

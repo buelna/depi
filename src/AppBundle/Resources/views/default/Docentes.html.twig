@@ -10,8 +10,8 @@
 		<div class="row">
 			<br>
 			<div class="col-md-2">    
-            {% if docente.getEnlaceImagen() %}
-            <img src="{{docente.getEnlaceImagen()}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% if docente.getWebPath() %}
+            <img src="{{asset(docente.getWebPath())}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
             {% else %}
             <img src="{{asset('bundles/app/images/unknown-user.gif')}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
             {% endif %}
@@ -30,8 +30,8 @@
 			{% set b = 1 %}
 		{% else %}
 			<div class="col-md-2">
-            {% if docente.getEnlaceImagen() %}
-            <img src="{{docente.getEnlaceImagen()}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% if docente.getWebPath() %}
+            <img src="{{asset(docente.getWebPath())}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
             {% else %}
             <img src="{{asset('bundles/app/images/unknown-user.gif')}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
             {% endif %}

@@ -1,9 +1,19 @@
 <?php
 
 namespace AppBundle\Controller;
-
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\SecurityContext;
+use AppBundle\Entity\Usuario;
+use AppBundle\Form\UsuarioType;
+use Doctrine\Common\DataFixtures\ReferenceRepository;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 class DefaultController extends Controller
 {
@@ -105,5 +115,67 @@ class DefaultController extends Controller
         }
         $publicacionesid=$p;
         return $this->render('AppBundle:default:Publicaciones.html.twig', array("entities"=>$entities,"tipos"=>$tipos,"miembros"=>$miembros,"publicaciones"=>$publicaciones,"publicacionesid"=>$publicacionesid));
+    }
+    public function loginAction(Request $request)
+    {
+         $session = $request->getSession();
+ 
+        // get the login error if there is one
+        if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
+            $error = $request->attributes->get(
+                SecurityContext::AUTHENTICATION_ERROR
+            );
+        } else {
+            $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
+            $session->remove(SecurityContext::AUTHENTICATION_ERROR);
+        }
+ 
+
+        return $this->render('AppBundle:default:login.html.twig',
+            array(
+                'last_username' => $session->get(SecurityContext::LAST_USERNAME),
+                'error'         => $error,
+            )
+        );
+
+    }
+    /**
+     * Displays a form to create a new Miembro entity.
+     *
+     * @Route("/new", name="usuario_new")
+     * @Method("GET")
+     * @Template("AppBundle:Default:nuevoUsuario.html.twig")
+     */
+    public function newAction(Request $peticion)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $usuario = new Usuario();
+        
+        $formulario = $this->createForm(new UsuarioType(), $usuario);
+        $formulario->handleRequest($peticion);
+
+        if ($formulario->isValid()) {
+            $usuario->setSalt(md5(time()));
+
+            $encoder = $this->get('security.encoder_factory')->getEncoder($usuario);
+            $passwordCodificado = $encoder->encodePassword(
+                $usuario->getPassword(),
+                $usuario->getSalt()
+            );
+            $usuario->setPassword($passwordCodificado);
+
+            $em->persist($usuario);
+            $em->flush();
+            
+
+            $token = new UsernamePasswordToken($usuario, null, 'usuarios', $usuario->getRoles());
+            $this->container->get('security.context')->setToken($token);
+
+            return $this->redirect($this->generateUrl('app_backend', array()));
+        }
+        return $this->render('AppBundle:default:nuevoUsuario.html.twig', array(
+            'form' => $formulario->createView()
+        ));
     }
 }

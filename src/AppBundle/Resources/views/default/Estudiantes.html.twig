@@ -9,8 +9,8 @@
     {% if b == 0 %}
     <div class="row">
         <div class="col-md-2">
-            {% if alumno.getEnlaceImagen() %}
-            <img src="{{alumno.getEnlaceImagen()}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% if alumno.getWebPath() %}
+            <img src="{{asset(alumno.getWebPath())}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
             {% else %}
             <img src="{{asset('bundles/app/images/unknown-user.gif')}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
             {% endif %}
@@ -29,8 +29,8 @@
         {% set b = 1 %}
     {% else %}
         <div class="col-md-2">
-            {% if alumno.getEnlaceImagen() %}
-            <img src="{{alumno.getEnlaceImagen()}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
+            {% if alumno.getWebPath() %}
+            <img src="{{asset(alumno.getWebPath())}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
             {% else %}
             <img src="{{asset('bundles/app/images/unknown-user.gif')}}" alt="" class="img-rounded img-responsive" width="150px" height="150px"/>
             {% endif %}

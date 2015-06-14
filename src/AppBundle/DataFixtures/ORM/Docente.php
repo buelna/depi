@@ -13,21 +13,21 @@
 			$miembros = array(
 
 array('nombre' => 'Arnoldo','apellidoP' => 'Díaz-Ramírez','apellidoM' => '','email' => '1','titulo' => '',
-	'enlaceImagen' => '','enlacePagina' => '','areaInteres'=>'Computo Ubicuo'),
+	'enlacePagina' => '','areaInteres'=>'Computo Ubicuo'),
 array('nombre' => 'Francisco','apellidoP' => 'Ibáñez','apellidoM' => 'Salas','email' => '1','titulo' => '',
-	'enlaceImagen' => '','enlacePagina' => '','areaInteres'=>'computo ubicuo'),
+	'enlacePagina' => '','areaInteres'=>'computo ubicuo'),
 array('nombre' => 'Claudia','apellidoP' => 'Martínez','apellidoM' => 'Castillo','email' => '1','titulo' => '',
-	'enlaceImagen' => '','enlacePagina' => '','areaInteres'=>'computo ubicuo'),
+	'enlacePagina' => '','areaInteres'=>'computo ubicuo'),
 array('nombre' => 'Verónica','apellidoP' => 'Quintero','apellidoM' => 'Rosas','email' => '1','titulo' => '',
-	'enlaceImagen' => '','enlacePagina' => '','areaInteres'=>'computo ubicuo'),
+	'enlacePagina' => '','areaInteres'=>'computo ubicuo'),
 array('nombre' => 'Heber Samuel','apellidoP' => 'Hernández','apellidoM' => 'Tabares','email' => '0','titulo' => '',
-	'enlaceImagen' => '','enlacePagina' => '','areaInteres'=>'computo ubicuo'),
+	'enlacePagina' => '','areaInteres'=>'computo ubicuo'),
 array('nombre' => 'Vidblaín','apellidoP' => 'Amaro','apellidoM' => 'Ortega','email' => '0','titulo' => '',
-	'enlaceImagen' => '','enlacePagina' => '','areaInteres'=>'computo ubicuo'),
+	'enlacePagina' => '','areaInteres'=>'computo ubicuo'),
 array('nombre' => 'Luis Aram','apellidoP' => 'Tafoya','apellidoM' => 'Díaz','email' => '0','titulo' => '',
-	'enlaceImagen' => '','enlacePagina' => '','areaInteres'=>'computo ubicuo'),
+	'enlacePagina' => '','areaInteres'=>'computo ubicuo'),
 array('nombre' => 'Jesus','apellidoP' => 'Olvera','apellidoM' => '','email' => '0','titulo' => '',
-	'enlaceImagen' => '','enlacePagina' => '','areaInteres'=>'computo ubicuo')
+	'enlacePagina' => '','areaInteres'=>'computo ubicuo')
 
 
 			);
@@ -40,7 +40,6 @@ array('nombre' => 'Jesus','apellidoP' => 'Olvera','apellidoM' => '','email' => '
 				$entidad->setApellidoM($miembro['apellidoM']);
 				$entidad->setEmail($miembro['email']);
 				$entidad->setTitulo($miembro['titulo']);
-				$entidad->setEnlaceImagen($miembro['enlaceImagen']);
 				$entidad->setEnlacePagina($miembro['enlacePagina']);
 				$entidad->setAreaInteres($miembro['areaInteres']);
 				$manager->persist($entidad);

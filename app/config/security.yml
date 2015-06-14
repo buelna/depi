@@ -1,12 +1,35 @@
 security:
+    encoders:
+        AppBundle\Entity\Usuario: { algorithm: sha512, iterations: 10 }
+
+        Symfony\Component\Security\Core\User\User: sha512
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
     providers:
-        in_memory:
-            memory: ~
+        usuarios:
+            entity: { class: AppBundle\Entity\Usuario, property: nombre }
+    access_control:
+        #- { path: ^/backend/*, roles: ROLE_USER }
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt|error)|css|images|js)/
             security: false
+        login_firewall:
+            pattern:    ^/backend/login$
+            anonymous:  ~
+        backend:
+            pattern:    ^/backend
+            form_login:
+                provider: usuarios
+                login_path: /backend/login
+                check_path: /backend/login_check
+            #use_forward: true
+            logout:
+                path:   /backend/logout
+                target: /
 
-        default:
-            anonymous: ~
+

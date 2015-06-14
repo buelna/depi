@@ -1,0 +1,21 @@
+{% extends '::backend.html.twig' %}
+{% block body %}
+	<div class="row">
+		<div class="large-12 columns" >
+			</br></br>
+                <div align="center"><h1 >Registro</h1></br></div>
+            <div class="large-6 columns">
+				
+				{{ form_start(form, { 'action': path('usuario_new'), 'method': 'POST' }) }} 
+                    	{{ form_label(form.nombre, 'Nombre') }}
+                        {{ form_widget(form.nombre) }}
+                        {{ form_label(form.password, 'Contraseña') }}
+                        {{ form_widget(form.password) }}
+                        <br>
+                        <button type="submit" class="btn-blue width-50" >Guardar</button>
+                         <br>
+                {{ form_end(form) }}
+			</div>	
+		</div> 
+	</div>
+{% endblock %}

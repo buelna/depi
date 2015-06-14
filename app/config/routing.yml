@@ -4,7 +4,7 @@ app:
 
 app_alumno:
     resource: "@AppBundle/Resources/config/routing.yml"
-    prefix:   /backend
+    prefix:   /
 
 app_backend:
     pattern: /backend
@@ -46,4 +46,13 @@ programame:
 publicaciones:
     pattern:  /Publicaciones/
     defaults: { _controller: AppBundle:Default:publicaciones }
-
+usuario_new:
+    pattern:  /backend/usuarioNuevo
+    defaults: { _controller: AppBundle:Default:new }
+login:
+    pattern:  /backend/login
+    defaults: { _controller: AppBundle:Default:login }
+login_check:
+    pattern:  /backend/login_check
+logout:
+    pattern:  /backend/logout

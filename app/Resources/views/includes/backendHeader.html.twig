@@ -15,6 +15,9 @@
       <ul class="nav navbar-nav">                               
         <li><a href="{{ path('docente') }}">Docente</a></li>
         <li><a href="{{ path('alumno') }}">Alumno</a></li>
+        <li><a href="{{ path('usuario_new') }}">Crear Usuario</a></li>
+        <li><a href="{{app.user ? path('logout') : path('login')}}" class="button">
+        {{app.user ? "Cerrar Sesión" : "Iniciar Sesión"}}</a></li>
       </ul>
     </div>
   </div>

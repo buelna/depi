@@ -6,9 +6,11 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class AlumnoType extends AbstractType
+
+
+class UsuarioType extends AbstractType
 {
-    /**
+        /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
@@ -16,13 +18,8 @@ class AlumnoType extends AbstractType
     {
         $builder
             ->add('nombre')
-            ->add('apellidoP')
-            ->add('apellidoM')
-            ->add('email')
-            ->add('titulo')
-            ->add('generacion')
-            ->add('areaInteres')
-            ->add('file')
+            ->add('password','password')
+            
         ;
     }
     
@@ -32,7 +29,7 @@ class AlumnoType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Alumno'
+            'data_class' => 'AppBundle\Entity\Usuario'
         ));
     }
 
@@ -41,6 +38,6 @@ class AlumnoType extends AbstractType
      */
     public function getName()
     {
-        return 'appbundle_alumno';
+        return 'appbundle_usuario';
     }
 }

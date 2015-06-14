@@ -1,20 +1,19 @@
 {% extends '::backend.html.twig' %}
  
 {% block body -%}
-    <h1>Alumno list</h1>
+    <h1>Lista de Alumnos</h1>
 
     <table class="records_list">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
-                <th>Apellidop</th>
-                <th>Apellidom</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
                 <th>Email</th>
                 <th>Titulo</th>
-                <th>Generacion</th>
-                <th>Areainteres</th>
-                <th>Enlaceimagen</th>
+                <th>Generación</th>
+                <th>Area de Interes</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -29,7 +28,6 @@
                 <td>{{ entity.titulo }}</td>
                 <td>{{ entity.generacion }}</td>
                 <td>{{ entity.areaInteres }}</td>
-                <td>{{ entity.enlaceImagen }}</td>
                 <td>
                 <ul>
                     <li>
