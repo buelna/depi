@@ -67,7 +67,7 @@ class Alumno
     /**
      * @var string
      *
-     * @ORM\Column(name="areaInteres", type="string", length=80, nullable=true)
+     * @ORM\Column(name="areaInteres", type="text", nullable=true)
      */
     private $areaInteres;
 
