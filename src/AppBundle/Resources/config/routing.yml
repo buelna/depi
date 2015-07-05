@@ -1,3 +1,11 @@
+app_cuerpoAcademico:
+    resource: "@AppBundle/Resources/config/routing/cuerpoacademico.yml"
+    prefix:   /backend/cuerpoAcademico
+
+app_convocatoria:
+    resource: "@AppBundle/Resources/config/routing/convocatoria.yml"
+    prefix:   /backend/convocatoria
+
 app_docente:
     resource: "@AppBundle/Resources/config/routing/docente.yml"
     prefix:   /backend/docente

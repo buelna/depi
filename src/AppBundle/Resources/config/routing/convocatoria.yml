@@ -1,0 +1,30 @@
+convocatoria:
+    path:     /
+    defaults: { _controller: "AppBundle:Convocatoria:index" }
+
+convocatoria_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Convocatoria:show" }
+
+convocatoria_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Convocatoria:new" }
+
+convocatoria_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Convocatoria:create" }
+    methods:  POST
+
+convocatoria_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Convocatoria:edit" }
+
+convocatoria_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Convocatoria:update" }
+    methods:  [POST, PUT]
+
+convocatoria_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Convocatoria:delete" }
+    methods:  [POST, DELETE]

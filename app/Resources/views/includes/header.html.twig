@@ -37,12 +37,14 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuerpos Académicos<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="http://caii.itmexicali.edu.mx">Cuerpo Académico Informática Industrial(CAII)</a></li>
+            {% for cuerpo in cuerpos %}
+            <li><a href="{{cuerpo.path}}">{{cuerpo.nombre}}</a></li>
+            {% endfor %}
           </ul>
         </li>
-        <li><a href="{{ path('admision') }}">Admisión</a></li>
+        <li><a href="{{ path('convocatorias') }}">Convocatorias</a></li>
         <li><a href="{{ path('contacto') }}">Contacto</a></li>
-        <li><a href="{{app.user ? path('logout') : path('login')}}" class="button">
+        <li><a href="{{app.user ? path('logout') : path('app_backend')}}" class="button">
         {{app.user ? "" : "Iniciar Sesión"}}</a></li>
       </ul>
     </div>

@@ -1,0 +1,30 @@
+cuerpoAcademico:
+    path:     /
+    defaults: { _controller: "AppBundle:CuerpoAcademico:index" }
+
+cuerpoAcademico_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:CuerpoAcademico:show" }
+
+cuerpoAcademico_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:CuerpoAcademico:new" }
+
+cuerpoAcademico_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:CuerpoAcademico:create" }
+    methods:  POST
+
+cuerpoAcademico_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:CuerpoAcademico:edit" }
+
+cuerpoAcademico_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:CuerpoAcademico:update" }
+    methods:  [POST, PUT]
+
+cuerpoAcademico_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:CuerpoAcademico:delete" }
+    methods:  [POST, DELETE]

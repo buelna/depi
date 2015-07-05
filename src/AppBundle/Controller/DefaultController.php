@@ -19,54 +19,77 @@ class DefaultController extends Controller
 {
     public function backendAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
         return $this->render('AppBundle:default:backendMenu.html.twig');
     }
     public function indexAction()
     {
-        return $this->render('AppBundle:default:Inicio.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
+        return $this->render('AppBundle:default:Inicio.html.twig', array('cuerpos'=>$cuerpos));
     }
-	public function admisionAction()
+	public function convocatoriasAction()
     {
-        return $this->render('AppBundle:default:Admision.html.twig', array());
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
+        $convocatorias = $em->getRepository('AppBundle:Convocatoria')->findAll();
+        return $this->render('AppBundle:default:Admision.html.twig', array('convocatorias'=>$convocatorias,'cuerpos'=>$cuerpos));
     }
     public function contactoAction()
 	{
-        return $this->render('AppBundle:default:Contacto.html.twig', array());
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
+        return $this->render('AppBundle:default:Contacto.html.twig', array('cuerpos'=>$cuerpos));
     }
     public function criteriospnpAction()
     {
-        return $this->render('AppBundle:default:CriteriosPNP.html.twig', array());
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
+        return $this->render('AppBundle:default:CriteriosPNP.html.twig', array('cuerpos'=>$cuerpos));
     }
     public function estudiantesAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
         $alumnos = $em->getRepository('AppBundle:Alumno')->findAll();
-	    return $this->render('AppBundle:default:Estudiantes.html.twig', array('alumnos'=>$alumnos));
+	    return $this->render('AppBundle:default:Estudiantes.html.twig', array('alumnos'=>$alumnos,'cuerpos'=>$cuerpos));
     }
     public function docentesAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
         $docentes = $em->getRepository('AppBundle:Docente')->findAll();
-	    return $this->render('AppBundle:default:Docentes.html.twig', array("docentes" => $docentes));
+	    return $this->render('AppBundle:default:Docentes.html.twig', array('cuerpos'=>$cuerpos,"docentes" => $docentes));
     }
     public function lineasIIAction()
     {
-        return $this->render('AppBundle:default:LineasII.html.twig', array());
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
+        return $this->render('AppBundle:default:LineasII.html.twig', array('cuerpos'=>$cuerpos));
     }
     public function lineasMEAction()
     {
-        return $this->render('AppBundle:default:LineasME.html.twig', array());
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
+        return $this->render('AppBundle:default:LineasME.html.twig', array('cuerpos'=>$cuerpos));
     }
     public function programaIIAction()
     {
-        return $this->render('AppBundle:default:ProgramaII.html.twig', array());
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
+        return $this->render('AppBundle:default:ProgramaII.html.twig', array('cuerpos'=>$cuerpos));
     }
     public function programaMEAction()
     {
-        return $this->render('AppBundle:default:ProgramaME.html.twig', array());
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
+        return $this->render('AppBundle:default:ProgramaME.html.twig', array('cuerpos'=>$cuerpos));
     }
     public function publicacionesAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'http://caii.itmexicali.edu.mx/es/caii/json/');
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
@@ -114,7 +137,7 @@ class DefaultController extends Controller
             $i++;
         }
         $publicacionesid=$p;
-        return $this->render('AppBundle:default:Publicaciones.html.twig', array("entities"=>$entities,"tipos"=>$tipos,"miembros"=>$miembros,"publicaciones"=>$publicaciones,"publicacionesid"=>$publicacionesid));
+        return $this->render('AppBundle:default:Publicaciones.html.twig', array('cuerpos'=>$cuerpos,"entities"=>$entities,"tipos"=>$tipos,"miembros"=>$miembros,"publicaciones"=>$publicaciones,"publicacionesid"=>$publicacionesid));
     }
     public function loginAction(Request $request)
     {

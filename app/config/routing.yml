@@ -16,9 +16,9 @@ inicio:
 general_main:
     path:     /Inicio
     defaults: { _controller: AppBundle:Default:index }
-admision:
-    pattern:  /Admision/
-    defaults: { _controller: AppBundle:Default:admision }
+convocatorias:
+    pattern:  /Convocatorias/
+    defaults: { _controller: AppBundle:Default:convocatorias }
 contacto:
     pattern:  /Contacto/
     defaults: { _controller: AppBundle:Default:contacto }

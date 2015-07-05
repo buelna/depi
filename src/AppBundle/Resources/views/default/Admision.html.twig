@@ -3,6 +3,8 @@
 
 {% block body %}
 <div class="well">
-<a href="{{asset('docs/ConvocatoriaAdmisionMIE_2014.pdf')}}" target="nueva"><h4>Convocatoria 2014</h4> </a> 
+{% for item in convocatorias %}
+	<a href="{{asset(item.getWebPath())}}" target="nueva"><h4>{{item.getTitulo}}</h4> </a><br>
+{% endfor %}
 </div>
 {% endblock %}
