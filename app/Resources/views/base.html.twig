@@ -19,7 +19,10 @@
         {% endblock %}
     </head>
     <body>
-        {% block header %} {{ include( ':includes:header.html.twig')}}{% endblock%}
+        <div>
+        {% block header %} {{ include( ':includes:header.html.twig')}}{% endblock %}
+        </div>
+        <div>
         <div class="col-md-1">
         {% block left %}{% endblock%}
         </div>
@@ -27,7 +30,8 @@
         {% block body %} {% endblock %}           
         </div>
         <div class="col-md-2">
-        {% block right %}{{ include( ':includes:right.html.twig')}}{% endblock%}
+        {% block right %}{{ include( ':includes:right.html.twig')}}{% endblock %}
+        </div>
         </div>
     </body>
 </html>
