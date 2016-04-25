@@ -1,7 +1,7 @@
 
 <h4> <b> Información Académica </b> </h4> 
 <ul>
- <li><a href="http://www.itmexicali.edu.mx/informacion/calendario20151.pdf">Calendario Escolar</a></li> 
+ <li><a href="http://www.itmexicali.edu.mx/informacion/CALENDARIO%202016-1.pdf">Calendario Escolar</a></li> 
  <li> <a href="{{ path('criteriospnp') }}">Criterios PNP</a></li> 
  </ul>
 <hr>
@@ -13,4 +13,8 @@
 <li><a href="http://www.universia.net.mx">Universia</a></li>
 <li><a href="http://dsa.sep.gob.mx">PROMEP</a></li>
 </ul>
+<hr>
+<ul>
+<a href="{{app.user ? path('logout') : path('app_backend')}}" class="button">
+        {{app.user ? "" : "Iniciar Sesión"}}</a>
 <hr>
