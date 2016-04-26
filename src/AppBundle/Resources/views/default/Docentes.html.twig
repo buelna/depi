@@ -20,7 +20,9 @@
 				<h4>{{docente.getNombre()}} {{docente.getApellidoP()}} {{docente.getApellidoM()}}</h4>
                 <small><i class="glyphicon glyphicon-envelope"></i>{{docente.getEmail()}}</small>
                 <br />
+                {% if docente.getEnlacePagina() %}
                 <small><i class="glyphicon glyphicon-globe"></i><a href="{{docente.getEnlacePagina()}}">Home Page</a></small>
+                {% endif %}
                 <br />
                 <small><i class="glyphicon glyphicon-book"></i>{{docente.getTitulo()}}</small>
                 <br />
@@ -40,7 +42,9 @@
                 <h4>{{docente.getNombre()}} {{docente.getApellidoP()}} {{docente.getApellidoM()}}</h4>
                 <small><i class="glyphicon glyphicon-envelope"></i>{{docente.getEmail()}}</small>
                 <br />
+                {% if docente.getEnlacePagina() %}
                 <small><i class="glyphicon glyphicon-globe"></i><a href="{{docente.getEnlacePagina()}}">Home Page</a></small>
+                {% endif %}
                 <br />
                 <small><i class="glyphicon glyphicon-book"></i>{{docente.getTitulo()}}</small>
                 <br />
