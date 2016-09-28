@@ -1,22 +1,16 @@
 {% extends '::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Convocatoria edit</h1>
+    <h1>Archivo edit</h1>
 
     {{ form(edit_form) }}
 
         <ul class="record_actions">
-        <li>
-        <a href="{{ path('archivo_new') }}">
-            Agregar Documento
-        </a>
-    </li>
     <li>
-        <a href="{{ path('convocatoria') }}">
+        <a href="{{ path('archivo') }}">
             Back to the list
         </a>
     </li>
-    
     <li>{{ form(delete_form) }}</li>
 </ul>
 {% endblock %}

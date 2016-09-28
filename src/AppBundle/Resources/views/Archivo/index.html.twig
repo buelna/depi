@@ -1,7 +1,7 @@
 {% extends '::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Convocatoria list</h1>
+    <h1>Archivo list</h1>
 
     <table class="records_list">
         <thead>
@@ -9,22 +9,24 @@
                 <th>Id</th>
                 <th>Titulo</th>
                 <th>Path</th>
+                <th>Convocatoria</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('convocatoria_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('archivo_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.titulo }}</td>
                 <td>{{ entity.path }}</td>
+                <td>{{ entity.idConvocatoria }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('convocatoria_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('archivo_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('convocatoria_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('archivo_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -35,14 +37,8 @@
 
         <ul>
         <li>
-            <a href="{{ path('convocatoria_new') }}">
+            <a href="{{ path('archivo_new') }}">
                 Create a new entry
-            </a>
-            
-        </li>
-        <li>
-            <a href="{{ path('archivo') }}">
-                Agregar documentos a convocatoria
             </a>
         </li>
     </ul>

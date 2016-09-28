@@ -1,0 +1,30 @@
+archivo:
+    path:     /
+    defaults: { _controller: "AppBundle:Archivo:index" }
+
+archivo_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Archivo:show" }
+
+archivo_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Archivo:new" }
+
+archivo_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Archivo:create" }
+    methods:  POST
+
+archivo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Archivo:edit" }
+
+archivo_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Archivo:update" }
+    methods:  [POST, PUT]
+
+archivo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Archivo:delete" }
+    methods:  [POST, DELETE]

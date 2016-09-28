@@ -34,7 +34,8 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
         $convocatorias = $em->getRepository('AppBundle:Convocatoria')->findAll();
-        return $this->render('AppBundle:default:Admision.html.twig', array('convocatorias'=>$convocatorias,'cuerpos'=>$cuerpos));
+        $archivos = $em->getRepository('AppBundle:Archivo')->findAll();
+        return $this->render('AppBundle:default:Admision.html.twig', array('convocatorias'=>$convocatorias,'archivos'=>$archivos,'cuerpos'=>$cuerpos));
     }
     public function contactoAction()
 	{

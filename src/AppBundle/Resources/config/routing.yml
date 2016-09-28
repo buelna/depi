@@ -1,3 +1,7 @@
+app_archivo:
+    resource: "@AppBundle/Resources/config/routing/archivo.yml"
+    prefix:   /backend/archivo
+
 app_cuerpoAcademico:
     resource: "@AppBundle/Resources/config/routing/cuerpoacademico.yml"
     prefix:   /backend/cuerpoAcademico

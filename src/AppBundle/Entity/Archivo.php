@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Convocatoria
+ * Archivo
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Convocatoria
+class Archivo
 {
     /**
      * @var integer
@@ -36,6 +36,16 @@ class Convocatoria
     public $path;
 
     /**
+     * @var integer
+     *   
+     * 
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Convocatoria")
+     * @ORM\JoinColumn(name="idConvocatoria", referencedColumnName="id")
+     * 
+     */
+    private $idConvocatoria;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -49,7 +59,7 @@ class Convocatoria
      * Set titulo
      *
      * @param string $titulo
-     * @return Convocatoria
+     * @return Archivo
      */
     public function setTitulo($titulo)
     {
@@ -66,6 +76,28 @@ class Convocatoria
     public function getTitulo()
     {
         return $this->titulo;
+    }
+
+    /**
+     * Set idConvocatoria
+     *
+     * @param Convocatoria
+     * @return Archivo
+     */
+    public function setIdConvocatoria(Convocatoria $id_Convocatoria)
+    {
+        $this->idConvocatoria = $id_Convocatoria;
+        return $this;
+    }
+
+    /**
+     * Get idConvocatoria
+     *
+     * @return AppBundle\Entity\Convocatoria
+     */
+    public function getIdConvocatoria()
+    {
+        return $this->idConvocatoria;
     }
 
     public function getAbsolutePath()
@@ -141,9 +173,5 @@ class Convocatoria
 
         // clean up the file property as you won't need it anymore
         $this->file = null;
-    }
-    public function __toString()
-    {
-        return $this->getTitulo();
     }
 }
