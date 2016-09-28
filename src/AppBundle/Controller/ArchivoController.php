@@ -41,6 +41,7 @@ class ArchivoController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->upload();
             $em->persist($entity);
             $em->flush();
 
@@ -170,6 +171,7 @@ class ArchivoController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $entity->upload();
             $em->flush();
 
             return $this->redirect($this->generateUrl('archivo_edit', array('id' => $id)));
