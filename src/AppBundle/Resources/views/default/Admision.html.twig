@@ -7,11 +7,13 @@
 	<a href="#" id="{{item.getId}}"><h4>{{item.getTitulo}}</h4></a> 
 	<div id="{{item.getId}}1" style="display:none">
 	<li><a href="{{asset(item.getWebPath())}}" target="nueva"><h4>Convocatoria</h4> </a></li>
+	<ul>
 	{% for archivo in archivos %}
 		{% if item.id == archivo.idConvocatoria.getId %}
 		<li><a href="{{asset(archivo.getWebPath())}}" target="nueva"><h4>{{archivo.getTitulo}}</h4> </a></li>
 		{% endif %}
 	{% endfor %}
+	</ul>
 	</div>
 	<script>
 	$(document).ready(function(){ 
