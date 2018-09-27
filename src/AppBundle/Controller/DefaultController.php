@@ -63,23 +63,23 @@ class DefaultController extends Controller
         $docentes = $em->getRepository('AppBundle:Docente')->findAll();
 	    return $this->render('AppBundle:default:Docentes.html.twig', array('cuerpos'=>$cuerpos,"docentes" => $docentes));
     }
-    public function lineasIIAction()
+    public function lineasMSCAction()
     {
         $em = $this->getDoctrine()->getManager();
         $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
-        return $this->render('AppBundle:default:LineasII.html.twig', array('cuerpos'=>$cuerpos));
+        return $this->render('AppBundle:default:LineasMSC.html.twig', array('cuerpos'=>$cuerpos));
     }
     public function lineasMEAction()
     {
         $em = $this->getDoctrine()->getManager();
         $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
-        return $this->render('AppBundle:default:LineasME.html.twig', array('cuerpos'=>$cuerpos));
+        return $this->render('AppBundle:default:Lineas.html.twig', array('cuerpos'=>$cuerpos));
     }
-    public function programaIIAction()
+    public function programaMSCAction()
     {
         $em = $this->getDoctrine()->getManager();
         $cuerpos = $em->getRepository('AppBundle:CuerpoAcademico')->findAll();
-        return $this->render('AppBundle:default:ProgramaII.html.twig', array('cuerpos'=>$cuerpos));
+        return $this->render('AppBundle:default:ProgramaMSC.html.twig', array('cuerpos'=>$cuerpos));
     }
     public function programaMEAction()
     {

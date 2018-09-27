@@ -6,12 +6,15 @@
 {% for item in convocatorias %}
 	<a href="#" id="{{item.getId}}"><h4>{{item.getTitulo}}</h4></a> 
 	<div id="{{item.getId}}1" style="display:none">
+	<ul>
 	<li><a href="{{asset(item.getWebPath())}}" target="nueva"><h4>Convocatoria</h4> </a></li>
+	
 	{% for archivo in archivos %}
 		{% if item.id == archivo.idConvocatoria.getId %}
 		<li><a href="{{asset(archivo.getWebPath())}}" target="nueva"><h4>{{archivo.getTitulo}}</h4> </a></li>
 		{% endif %}
 	{% endfor %}
+	</ul>
 	</div>
 	<script>
 	$(document).ready(function(){ 

@@ -17,26 +17,32 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){ 
-   $('#IIplan').on('click',function(){
-      $('#IIplan1').toggle();
+   $('#permanencia').on('click',function(){
+      $('#permanencia1').toggle();
    });
 });
 
 $(document).ready(function(){ 
-   $('#IIgeneral').on('click',function(){
-      $('#IIgenera1').toggle();
+   $('#objetivos').on('click',function(){
+      $('#objetivos1').toggle();
    });
 });
 
 $(document).ready(function(){ 
-   $('#IIacademica').on('click',function(){
-      $('#IIacademica1').toggle();
+   $('#obtencionGrado').on('click',function(){
+      $('#obtencionGrado1').toggle();
    });
 });
 
 $(document).ready(function(){ 
    $('#MElineaA').on('click',function(){
       $('#MElineaA1').toggle();
+   });
+});
+
+$(document).ready(function(){ 
+   $('#lineaA').on('click',function(){
+      $('#lineaA1').toggle();
    });
 });
 

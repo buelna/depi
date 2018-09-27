@@ -31,15 +31,15 @@ estudiantes:
 investigadores:
     pattern:  /Docentes/
     defaults: { _controller: AppBundle:Default:docentes }
-lineasii:
-    pattern:  /LineasII/
-    defaults: { _controller: AppBundle:Default:lineasII }
+lineasmsc:
+    pattern:  /LineasMSC/
+    defaults: { _controller: AppBundle:Default:lineasMSC }
 lineasme:
-    pattern:  /LineasME/
+    pattern:  /Lineas/
     defaults: { _controller: AppBundle:Default:lineasME }
-programaii:
-    pattern:  /ProgramaII/
-    defaults: { _controller: AppBundle:Default:programaII }
+programamsc:
+    pattern:  /ProgramaMSC/
+    defaults: { _controller: AppBundle:Default:programaMSC }
 programame:
     pattern:  /ProgramaME/
     defaults: { _controller: AppBundle:Default:programaME }
